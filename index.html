@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Commands</title>
+</head>
+<body>
+    <h1>Simple Service Related Linux Commands</h1>
+    <p>systemctl list-units --all --type=service --no-pager</p>
+    <p>systemctl list-unit-files --no-pager</p>
+    <p>systemctl list-unit-files --no-pager | grep apache2</p>
+    <p>systemctl list-units --all --type=service --no-pager | grep running</p>
+    <p>systemctl list-units --all --type=service --no-pager | grep exited</p>
+    <p>systemctl list-units --all --type=service --no-pager | grep dead</p>
+    <p>systemctl start apache2</p>
+    <p>systemctl stop apache2</p>
+    <p>systemctl list-unit-files | grep enabled</p>
+    <p>systemctl list-unit-files | grep disabled</p>
+    <p>sudo systemctl enable apache2</p>
+    <p>sudo systemctl disable apache2</p>
+</body>
+</html>
