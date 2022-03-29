@@ -1,0 +1,40 @@
+version: '3'
+
+networks:
+  net01:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
+  net02:
+    ipam:
+      config:
+        - subnet: 172.40.0.0/16
+  net03:
+    ipam:
+      config:
+        - subnet: 172.50.0.0/16
+
+services:
+  api:
+    build: ./api
+    ports:
+      - "8000:80"
+    networks:
+      - net01
+      - net02
+  db:
+    build: ./db
+    ports:
+      - "3306:3306"
+    networks:
+      - net02
+    environment:
+      - MYSQL_ROOT_PASSWORD=Passw0rd
+
+  fo:
+    build: ./fo
+    ports:
+      - "8080:80"
+    networks:
+      - net02
+      - net03

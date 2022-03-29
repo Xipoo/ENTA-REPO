@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  xpto:
+    container_name: xpto
+    build: .
+    environment:
+      - O_MEU_NOME=NOME 
+    tty: true
+  db:
+    container_name: db
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+
+# mysql -u root -p

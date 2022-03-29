@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+  db:
+    image: 'mysql:latest'
+    ports:
+      - '3306:3306'
+      - '3000:3000'
+    volumes:
+      - /data:/data
+    environment:
+      - MYSQL_ROOT_PASSWORD=Passw0rd
+  os:
+    build: .
+    depends_on:
+      - db
+
+# Ola sou [REDACTED], aluno da ENTA
+# Infelizmente o Jack não quer que vaia para o curso nivel V
+# Pq se eu for eu que vou mandar naquilo... F (no chat)
+# Mas enfim, estamos aqui na aula do (GOD)Paulo Leite
+# Tamos a aprender Dicker Containers, #4EverInMyMind
+# QUERO É DOCKER COMPOSE E ACABOU
+# Aquele Dicker Compositor deixa-me todo acabated
+# 240GB de IMAGENS DO DOCKER
+# Sou gerente do Docker Hub, onde faço gerenciamento de todas as imagens
+#
+# Sempre acreditei que estas baleias com contetores são mt fortes 
+# Agora pensa bem... uma baleia... A LEVAR UM CONTAINER AS COSTAS
+# Baleia que ta naquela {grind} e naquela {JD grindset 2.0}
+# Baleia que trabalha para a AWS que fica toda podereted
