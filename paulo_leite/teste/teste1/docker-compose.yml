@@ -1,0 +1,49 @@
+version: '3'
+
+networks:
+  network01:
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+  network02:
+    ipam:
+      config:
+        - subnet: 192.168.2.0/24
+  network03:
+    ipam:
+      config:
+        - subnet: 192.168.3.0/24
+
+services:
+  web:
+    image: nginx
+    container_name: NGSERVER
+    tty: true
+    volumes:
+      - ./cfg:/etc/nginx/
+      - ./src:/usr/share/nginx/
+    ports:
+    - "80:80"
+    networks:
+      - network01
+  db:
+    container_name: MYSQLSERVER
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=Passw0rd
+    networks:
+      - network02
+      - network03
+    volumes:
+      - ./mysqldata:/var/lib/mysql
+  client:
+    container_name: MEMBERSERVER
+    tty: true
+    build: ./memberserver
+    environment:
+      - ENV_VAR_001="xpto1"
+      - ENV_VAR_002="xpto2"
+      - ENV_VAR_003="xpto3"
+    networks:
+      - network03
+
