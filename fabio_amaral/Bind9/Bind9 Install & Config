@@ -1,0 +1,28 @@
+# Install Bind9, Basic Configuration
+
+# Bind9 Installation
+
+sudo apt update
+sudo apt install bind9
+
+# Bind9 Configuration
+
+vim /etc/bind/named.conf.options
+
+listen-on { any; };
+allow-query { any; };
+
+forwarders {
+    8.8.8.8;
+    1.1.1.1;
+};
+
+# Post Configuration
+
+sudo named-checkconf                # Checks config file for errors
+sudo systemctl restart bind9        # Restarts the bind9 service
+
+# Info
+
+The bind9 config can be found under: /etc/bind/named.conf.options
+If you use firewall you will need to allow bind9
