@@ -1,0 +1,29 @@
+# Switch
+
+enable & en                                 # Enable superuser
+configure terminal                          # Enable config mode
+hostname (nome)                             # Change hostname
+no ip domain-lookup                         # Prevent from searching dns
+show running-config                         # Shows config
+show startup-config                         # Shows config
+copy running-config startup-config          # Copies running-config to startup-config aka persistent file
+line console 0                              # Configure console
+login                                       # Login
+enable password [password]                  # Change superuser password
+service password-encryption                 # Encrypts all passwords
+
+# Router
+
+interface
+no shutdown
+erase startup-config
+show ip interface brief
+show ip route
+
+# Routing
+
+R1
+ip route 172.16.0.0 255.255.255.0 192.168.2.2
+
+R2
+ip route 192.168.1.0 255.255.255.0 192.168.2.1
