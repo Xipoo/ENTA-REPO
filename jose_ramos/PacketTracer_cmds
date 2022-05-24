@@ -14,7 +14,9 @@ service password-encryption                 # Encrypts all passwords
 
 # Router
 
-interface
+interface (interface) nº
+ip address x.x.x.x x.x.x.x
+
 no shutdown
 erase startup-config
 show ip interface brief
@@ -27,3 +29,5 @@ ip route 172.16.0.0 255.255.255.0 192.168.2.2
 
 R2
 ip route 192.168.1.0 255.255.255.0 192.168.2.1
+
+ip route 0.0.0.0 0.0.0.0 x.x.x.x
