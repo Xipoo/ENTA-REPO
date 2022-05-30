@@ -31,3 +31,24 @@ R2
 ip route 192.168.1.0 255.255.255.0 192.168.2.1
 
 ip route 0.0.0.0 0.0.0.0 x.x.x.x
+
+#
+# VLANS
+#
+
+# Basic Setup (switch)
+
+conf term
+vlan (number)   # Select VLAN do configure
+name (name)     # Changes VLAN name
+
+show vlan brief
+
+conf term
+interface (interface) (number)
+switchport mode access
+switchport access vlan 10
+
+switchport mode trunk
+switchport trunk native vlan 99
+switchport trunk allowed vlan 10,20,99
