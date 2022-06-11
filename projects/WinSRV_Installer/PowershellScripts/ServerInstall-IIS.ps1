@@ -1,0 +1,10 @@
+Install-WindowsFeature -Name Web-Server
+Install-WindowsFeature -Name Web-Default-Doc
+Install-WindowsFeature -Name Web-Dir-Browsing
+Install-WindowsFeature -Name Web-Http-Errors
+Install-WindowsFeature -Name Web-Static-Content
+Install-WindowsFeature -Name Web-Http-Logging
+Install-WindowsFeature -Name Web-Stat-Compression
+Install-WindowsFeature -Name Web-Filtering
+Install-WindowsFeature -Name Web-Basic-Auth
+Install-WindowsFeature -Name Web-Mgmt-Console
